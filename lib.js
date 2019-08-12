@@ -145,7 +145,9 @@ module.exports = class Shrimpit {
     this.resolveReExports()
 
     if (this.displayJSON) {
-      return this.renderToJSON()
+      const renderedJSON = this.renderToJSON();
+      log(renderedJSON);
+      return renderedJSON;
     } else {
       if (this.displayTree) this.renderTree()
       this.renderUnused()
